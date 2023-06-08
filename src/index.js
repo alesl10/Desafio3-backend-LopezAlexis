@@ -5,16 +5,15 @@ export default class ProductManager {
         this.products = [];
         this.path = path
     }
-
     // generar id autoincrementable
     generateId() {
         if (this.products.length > 0) {
             const lastProduct = this.products[this.products.length - 1];
-            this.code = lastProduct.code + 1;
+            this.id = lastProduct.id + 1;
         } else {
-            this.code = 1;
+            this.id = 1;
         }
-        return this.code;
+        return this.id;
     }
 
     addProduct({ title = '', description = '', price = 0, thumbnail = '', code = '', stock = 0 } = {}) {
@@ -24,6 +23,7 @@ export default class ProductManager {
             console.log('Error: Debes proporcionar todos los valores obligatorios.');
             return;
         }
+
 
         // Creando nuevo producto
         const newProduct = {
