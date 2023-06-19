@@ -40,9 +40,9 @@ router.post(`/`, async (req, res) => {
 
         if (estado.status === "Ok") {
             res.send({ status: "Ok", message: `Producto (${producto.title}) agregado` })
-        }else {
+        } else {
             console.log("error al agregar producto")
-            res.send({status:"error", message: "error al agregar producto"})
+            res.send({ status: "error", message: `error al agregar el producto` })
         }
     } catch (error) {
         console.log(`error al agregar producto`)
