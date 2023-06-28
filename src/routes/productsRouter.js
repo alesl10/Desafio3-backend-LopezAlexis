@@ -1,6 +1,7 @@
 import { Router } from "express"
 import ProductManager from "../manager/productsManager.js"
 
+
 const router = Router()
 const manager = new ProductManager("./data/products.json")
 
@@ -63,5 +64,6 @@ router.delete(`/:pid`, async (req, res) => {
         res.send({ error: `no se encontro el producto` })
     }
 })
+
 
 export default router
